@@ -34,10 +34,10 @@ namespace  Problems
 
             return currentIndex+1;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{1,1,1,2,2,3};
-            Console.WriteLine($"{Utility.PrintArray<int>(input)} => {new RemoveDuplicateTwice().RemoveDuplicates(input)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{1,1,1,2,2,3};
+        //     Console.WriteLine($"{Utility.PrintArray<int>(input)} => {new RemoveDuplicateTwice().RemoveDuplicates(input)}");
+        // }
     }
 }
