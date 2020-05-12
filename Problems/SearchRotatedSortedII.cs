@@ -54,11 +54,11 @@ namespace Problems
                 }
             }
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{2,5,6,0,0,1,2};
-            int target = 7;
-            Console.WriteLine($"{Utility.PrintArray<int>(input)}, {target} => {new SearchRotatedSortedII().Search(input, target)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{2,5,6,0,0,1,2};
+        //     int target = 7;
+        //     Console.WriteLine($"{Utility.PrintArray<int>(input)}, {target} => {new SearchRotatedSortedII().Search(input, target)}");
+        // }
     }
 }

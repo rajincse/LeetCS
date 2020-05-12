@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace  Common
@@ -23,6 +24,11 @@ namespace  Common
         }
 
         public static string PrintArray<T>(T[] arr)
+        {        
+            return string.Join(",", arr);
+        }
+
+        public static string PrintList<T>(IList<T> arr)
         {        
             return string.Join(",", arr);
         }
