@@ -43,13 +43,13 @@ namespace Problems{
             }    
             return result;
         }
-        public static void Main(string[] args)
-        {
-            string input ="[1,null,2,3]";
-            TreeNode node = TreeNode.StringToTreeNode(input);
-            Console.WriteLine($"{node.ToString()}");
-            Console.WriteLine($"Preorder=>{Utility.PrintList<int>(new BinaryTreePreorder().PreorderTraversal(node))}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input ="[1,null,2,3]";
+        //     TreeNode node = TreeNode.StringToTreeNode(input);
+        //     Console.WriteLine($"{node.ToString()}");
+        //     Console.WriteLine($"Preorder=>{Utility.PrintList<int>(new BinaryTreePreorder().PreorderTraversal(node))}");
+        // }
     }
 
 }
