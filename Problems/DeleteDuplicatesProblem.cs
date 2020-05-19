@@ -52,14 +52,13 @@ namespace Problems{
 
             return  head;
         }
-        public static void Main(string[] args)
-        {
-            int [] input = new int[]{1,2,3};
-            ListNode head = ListNode.CreateFromInt(input);
-            Console.WriteLine($" Before: : {head}");
-            ListNode result = new DeleteDuplicatesProblem().DeleteDuplicates(head);
-            Console.WriteLine($" After: : {result}");
-            
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int [] input = new int[]{1,2,3};
+        //     ListNode head = ListNode.CreateFromInt(input);
+        //     Console.WriteLine($" Before: : {head}");
+        //     ListNode result = new DeleteDuplicatesProblem().DeleteDuplicates(head);
+        //     Console.WriteLine($" After: : {result}");
+        // }
     }
 }
