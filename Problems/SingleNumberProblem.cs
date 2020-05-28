@@ -38,10 +38,10 @@ namespace Problems{
 
             return result;
         }
-        public static void Main(string[] args)
-        {
-            int [] nums = new int[]{2,3,2,2};
-            Console.WriteLine($"Input:{Utility.PrintArray<int>(nums)}, out: {new SingleNumberProblem().SingleNumber(nums)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int [] nums = new int[]{2,3,2,2};
+        //     Console.WriteLine($"Input:{Utility.PrintArray<int>(nums)}, out: {new SingleNumberProblem().SingleNumber(nums)}");
+        // }
     }
 }
