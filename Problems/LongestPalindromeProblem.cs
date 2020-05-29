@@ -66,12 +66,12 @@ namespace Problems
             return new IndexRange(start+1, end-1);
 
         }
-        public static void Main(string[] args)
-        {
-            string input = "acbbcad" ;
-            string result= new LongestPalindromeProblem().LongestPalindrome(input);
-            Console.WriteLine($"Input:{input} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input = "acbbcad" ;
+        //     string result= new LongestPalindromeProblem().LongestPalindrome(input);
+        //     Console.WriteLine($"Input:{input} => {result}");
+        // }
     }
 
 }
