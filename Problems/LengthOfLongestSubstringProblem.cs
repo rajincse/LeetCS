@@ -33,12 +33,12 @@ namespace Problems{
             return maxLength;   
         }
         
-        public static void Main(string[] args)
-        {
-            string input = null ;
-            int result= new LengthOfLongestSubstringProblem().LengthOfLongestSubstring(input);
-            Console.WriteLine($"Input:{input} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input = null ;
+        //     int result= new LengthOfLongestSubstringProblem().LengthOfLongestSubstring(input);
+        //     Console.WriteLine($"Input:{input} => {result}");
+        // }
     }
 
 }
