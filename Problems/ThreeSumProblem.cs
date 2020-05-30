@@ -56,11 +56,11 @@ namespace Problems
             }
             return result;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{-1, 0, 1, 2, -1, -4};
-            var  result= new ThreeSumProblem().ThreeSum(input);
-            Console.WriteLine($"Input:{Utility.PrintArray<int>(input)} => {Utility.Print2DList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{-1, 0, 1, 2, -1, -4};
+        //     var  result= new ThreeSumProblem().ThreeSum(input);
+        //     Console.WriteLine($"Input:{Utility.PrintArray<int>(input)} => {Utility.Print2DList<int>(result)}");
+        // }
     }
 }
