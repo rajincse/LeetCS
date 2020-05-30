@@ -25,11 +25,11 @@ namespace Problems
             }
             return maxArea;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{1,8,6,2,5,4,8,3,7};
-            int result= new ContainerMostWaterProblem().MaxArea(input);
-            Console.WriteLine($"Input:{Utility.PrintArray<int>(input)} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{1,8,6,2,5,4,8,3,7};
+        //     int result= new ContainerMostWaterProblem().MaxArea(input);
+        //     Console.WriteLine($"Input:{Utility.PrintArray<int>(input)} => {result}");
+        // }
     }
 }

@@ -29,8 +29,23 @@ namespace  Common
         }
 
         public static string PrintList<T>(IList<T> arr)
-        {        
+        {   
+            if(arr == null) return null;     
             return string.Join(",", arr);
+        }
+
+        public static string Print2DList<T>(IList<IList<T>> list2D)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("[");
+            foreach(IList<T> list in list2D)
+            {
+                sb.Append("[");
+                sb.Append(string.Join(",", list));
+                sb.Append("],");
+            }
+            sb.Append("]");
+            return sb.ToString();
         }
     }
 }
