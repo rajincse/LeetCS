@@ -39,11 +39,11 @@ namespace Problems
             return (parenthesesStack.Count ==0);
         }
 
-        public static void Main(string[] args)
-        {
-            string input = "[{}{}({})]";
-            bool result = new ValidParentheseProblem().IsValid(input);
-            Console.WriteLine($"Input:{input} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input = "[{}{}({})]";
+        //     bool result = new ValidParentheseProblem().IsValid(input);
+        //     Console.WriteLine($"Input:{input} => {result}");
+        // }
     }
 }

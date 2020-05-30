@@ -25,13 +25,13 @@ namespace  Common
 
         public static string PrintArray<T>(T[] arr)
         {        
-            return string.Join(",", arr);
+            return string.Join<T>(",", arr);
         }
 
         public static string PrintList<T>(IList<T> arr)
         {   
             if(arr == null) return null;     
-            return string.Join(",", arr);
+            return string.Join<T>(",", arr);
         }
 
         public static string Print2DList<T>(IList<IList<T>> list2D)
