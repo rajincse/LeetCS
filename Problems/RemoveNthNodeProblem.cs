@@ -29,15 +29,15 @@ namespace Problems
                 return (node, currentIndex);
             }
         }
-        public static void Main(string[] args)
-        {
-            int[] inputArr = new int[]{1,2,3,4,5};
-            ListNode input = ListNode.CreateFromInt(inputArr);
-            int target = 5;
-            string inputList = input.ToString();
-            ListNode result = new RemoveNthNodeProblem().RemoveNthFromEnd(input, target);
+        // public static void Main(string[] args)
+        // {
+        //     int[] inputArr = new int[]{1,2,3,4,5};
+        //     ListNode input = ListNode.CreateFromInt(inputArr);
+        //     int target = 5;
+        //     string inputList = input.ToString();
+        //     ListNode result = new RemoveNthNodeProblem().RemoveNthFromEnd(input, target);
 
-            Console.WriteLine($"Input:{inputList}, {target} => {result}");
-        }
+        //     Console.WriteLine($"Input:{inputList}, {target} => {result}");
+        // }
     }
 }
