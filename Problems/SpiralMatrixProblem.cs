@@ -50,20 +50,20 @@ namespace Problems
                 result.Add(matrix[i][startColIndex]);
             }
         }
-        public static void Main(string[] args)
-        {
-            int[][] input = new int[][]{
-                new int[]{1,2,3},
-                new int[]{4,5,6},
-                new int[]{4,5,6},
-                new int[]{7,8,9}
-                // new int[]{1,2,3,4,5,6,7},
-                // new int[]{4,5,6,7,8,9,1},
-                // new int[]{7,8,9,1,2,3,4},
-                // new int[]{4,5,6,7,8,9,1}
-            };                        
-            var result = new SpiralMatrixProblem().SpiralOrder(input);
-            Console.WriteLine($"Input:\n{Utility.Print2DArray<int>(input, '\n')}=> {Utility.PrintList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[][] input = new int[][]{
+        //         new int[]{1,2,3},
+        //         new int[]{4,5,6},
+        //         new int[]{4,5,6},
+        //         new int[]{7,8,9}
+        //         // new int[]{1,2,3,4,5,6,7},
+        //         // new int[]{4,5,6,7,8,9,1},
+        //         // new int[]{7,8,9,1,2,3,4},
+        //         // new int[]{4,5,6,7,8,9,1}
+        //     };                        
+        //     var result = new SpiralMatrixProblem().SpiralOrder(input);
+        //     Console.WriteLine($"Input:\n{Utility.Print2DArray<int>(input, '\n')}=> {Utility.PrintList<int>(result)}");
+        // }
     }
 }
