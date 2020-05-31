@@ -48,8 +48,8 @@ namespace Problems
         }
         // public static void Main(string[] args)
         // {
-        //     int[] input = new int[]{4};
-        //     int target = 2;
+        //     int[] input = new int[]{4,5,6,7,8,0,1};
+        //     int target = 1;
         //     Console.WriteLine($"{Utility.PrintArray<int>(input)}, {target} => {new SearchRotatedSortedArray().Search(input, target)}");
         // }
     }
