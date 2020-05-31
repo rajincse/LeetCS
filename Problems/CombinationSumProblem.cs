@@ -32,12 +32,12 @@ namespace Problems
             }
             return result;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{2,3,6,7};
-            int target = 7;
-            var result = new CombinationSumProblem().CombinationSum(input, target);
-            Console.WriteLine($"Input:{Utility.PrintArray<int>(input)}, {target} => {Utility.Print2DList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{2,3,6,7};
+        //     int target = 7;
+        //     var result = new CombinationSumProblem().CombinationSum(input, target);
+        //     Console.WriteLine($"Input:{Utility.PrintArray<int>(input)}, {target} => {Utility.Print2DList<int>(result)}");
+        // }
     }
 }
