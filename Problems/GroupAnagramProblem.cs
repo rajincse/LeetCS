@@ -58,11 +58,11 @@ namespace Problems
             }
             return sb.ToString();
         }
-        public static void Main(string[] args)
-        {
-            string[] input = new string[]{"eat", "tea", "tan", "ate", "nat", "bat"};                        
-            var result = new GroupAnagramProblem().GroupAnagrams(input);
-            Console.WriteLine($"Input:{Utility.PrintArray<string>(input)}=> {Utility.Print2DList<string>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string[] input = new string[]{"eat", "tea", "tan", "ate", "nat", "bat"};                        
+        //     var result = new GroupAnagramProblem().GroupAnagrams(input);
+        //     Console.WriteLine($"Input:{Utility.PrintArray<string>(input)}=> {Utility.Print2DList<string>(result)}");
+        // }
     }
 }

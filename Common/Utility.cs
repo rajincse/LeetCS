@@ -28,7 +28,7 @@ namespace  Common
             if(arr == null) return null;      
             return string.Join<T>(",", arr);
         }
-        public static string Print2DArray<T>(T[][] arr2D)
+        public static string Print2DArray<T>(T[][] arr2D, char arraySeparator =',')
         {
             if(arr2D == null)
             {
@@ -40,7 +40,8 @@ namespace  Common
             {
                 sb.Append("[");
                 sb.Append(string.Join(",", arr));
-                sb.Append("],");
+                sb.Append("]");
+                sb.Append(arraySeparator);
             }
             sb.Append("]");
             return sb.ToString();
