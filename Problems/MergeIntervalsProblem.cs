@@ -47,6 +47,16 @@ namespace Problems
             {
                 intervalList.Add(new Interval(intervalArray[0], intervalArray[1]));
             }
+            return Merge(intervalList);
+            
+        }
+        public int[][] Merge(List<Interval> intervalList)
+        {
+            if(intervalList == null || intervalList.Count ==0)
+            {
+                return null;
+            }
+
             intervalList.Sort();
             Stack<Interval> stack = new Stack<Interval>();
             foreach(Interval interval in intervalList)
@@ -71,25 +81,53 @@ namespace Problems
                 }
             }
             int[][] result = new int[stack.Count][];
-            int index = 0;
+            int index = result.Length-1;
             while(stack.Count >0)
             {
                 Interval top = stack.Pop();
                 result[index] = new int[]{top.Start, top.End};
-                index++;
+                index--;
             }
             return result;
+        }
+        public int[][] Insert(int[][] intervals, int[] newInterval) {
+            if(intervals == null && newInterval == null)
+            {
+                return null;
+            }
+            if(intervals != null && (newInterval == null || newInterval.Length ==0))
+            {
+                return Merge(intervals);
+            }
+            if(newInterval!= null && (intervals == null || intervals.Length ==0))
+            {
+                return new int[][]{newInterval};
+            }
+            List<Interval> intervalList = new List<Interval>();
+            foreach(int[] intervalArray in intervals)
+            {
+                intervalList.Add(new Interval(intervalArray[0], intervalArray[1]));
+            }
+            intervalList.Add(new Interval(newInterval[0], newInterval[1]));
+
+            return Merge(intervalList);
         }
         public static void Main(string[] args)
         {
             int[][] input = new int[][]{
-                new int[]{1,3},
-                new int[]{2,6},
-                new int[]{8,10},
-                new int[]{15,18}
+                // new int[]{1,2},
+                // new int[]{3,5},
+                // new int[]{6,7},
+                // new int[]{8,10},
+                // new int[]{12,16},
             };
-            var result = new MergeIntervalsProblem().Merge(input);
-            Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");
+            int[] newInterval = new int[]{4,8};
+
+            // var result = new MergeIntervalsProblem().Merge(input);
+            // Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");
+            
+            var result = new MergeIntervalsProblem().Insert(input, newInterval);
+            Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");            
         }
     }
 }
