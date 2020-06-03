@@ -112,22 +112,22 @@ namespace Problems
 
             return Merge(intervalList);
         }
-        public static void Main(string[] args)
-        {
-            int[][] input = new int[][]{
-                // new int[]{1,2},
-                // new int[]{3,5},
-                // new int[]{6,7},
-                // new int[]{8,10},
-                // new int[]{12,16},
-            };
-            int[] newInterval = new int[]{4,8};
+        // public static void Main(string[] args)
+        // {
+        //     int[][] input = new int[][]{
+        //         // new int[]{1,2},
+        //         // new int[]{3,5},
+        //         // new int[]{6,7},
+        //         // new int[]{8,10},
+        //         // new int[]{12,16},
+        //     };
+        //     int[] newInterval = new int[]{4,8};
 
-            // var result = new MergeIntervalsProblem().Merge(input);
-            // Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");
+        //     // var result = new MergeIntervalsProblem().Merge(input);
+        //     // Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");
             
-            var result = new MergeIntervalsProblem().Insert(input, newInterval);
-            Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");            
-        }
+        //     var result = new MergeIntervalsProblem().Insert(input, newInterval);
+        //     Console.WriteLine($"input: {Utility.Print2DArray<int>(input)} =>{Utility.Print2DArray<int>(result)}");            
+        // }
     }
 }
