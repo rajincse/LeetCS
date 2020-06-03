@@ -43,11 +43,11 @@ namespace Problems
 
             return ClimbStairsRecursive(n-1)+ ClimbStairsRecursive(n-2);
         }
-        public static void Main(string[] args)
-        {
-            int input = 6;
-            int result = new ClimbingStrairsProblem().ClimbStairs(input);
-            Console.WriteLine($"Input: {input} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int input = 6;
+        //     int result = new ClimbingStrairsProblem().ClimbStairs(input);
+        //     Console.WriteLine($"Input: {input} => {result}");
+        // }
     }
 }
