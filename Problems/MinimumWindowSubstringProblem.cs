@@ -69,13 +69,13 @@ namespace Problems
 
             return s.Substring(minWindowLeft, minWindowSize);
         }
-        public static void Main(string[] args)
-        {
-            string s ="aaaaaaaaaaaabbbbbcdd";
-            string t = "abcdd";
+        // public static void Main(string[] args)
+        // {
+        //     string s ="aaaaaaaaaaaabbbbbcdd";
+        //     string t = "abcdd";
             
-            var result = new MinimumWindowSubstringProblem().MinWindow(s, t); // "abbbbbcdd"
-            Console.WriteLine($"Input: {s},{t} => {result}");
-        }
+        //     var result = new MinimumWindowSubstringProblem().MinWindow(s, t); // "abbbbbcdd"
+        //     Console.WriteLine($"Input: {s},{t} => {result}");
+        // }
     }
 }
