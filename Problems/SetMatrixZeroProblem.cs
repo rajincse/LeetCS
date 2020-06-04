@@ -47,18 +47,18 @@ namespace Problems
                 }
             }
         }
-        public static void Main(string[] args)
-        {
-            int[][] input = new int[][]
-            {
-                new int[]{1,1,1},
-                new int[]{1,0,1},
-                new int[]{1,1,1}
-            };
-            string inputString = Utility.Print2DArray<int>(input);
-            new SetMatrixZeroProblem().SetZeroes(input);
-            var result = Utility.Print2DArray<int>(input);
-            Console.WriteLine($"Input: {inputString} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[][] input = new int[][]
+        //     {
+        //         new int[]{1,1,1},
+        //         new int[]{1,0,1},
+        //         new int[]{1,1,1}
+        //     };
+        //     string inputString = Utility.Print2DArray<int>(input);
+        //     new SetMatrixZeroProblem().SetZeroes(input);
+        //     var result = Utility.Print2DArray<int>(input);
+        //     Console.WriteLine($"Input: {inputString} => {result}");
+        // }
     }
 }
