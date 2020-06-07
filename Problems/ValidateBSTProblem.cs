@@ -37,12 +37,12 @@ namespace Problems
                 && IsValidBST(root.left, minValue, root.val) 
                 && IsValidBST(root.right, root.val, maxValue); 
         }
-        public static void Main(string[] args)
-        {
-            string inputString = $"[1,null,5]";
-            TreeNode node = TreeNode.StringToTreeNode(inputString);
-            bool result = new ValidateBSTProblem().IsValidBST(node);
-            Console.WriteLine($"Input: \n{node}\n=>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string inputString = $"[1,null,5]";
+        //     TreeNode node = TreeNode.StringToTreeNode(inputString);
+        //     bool result = new ValidateBSTProblem().IsValidBST(node);
+        //     Console.WriteLine($"Input: \n{node}\n=>{result}");
+        // }
     }
 }
