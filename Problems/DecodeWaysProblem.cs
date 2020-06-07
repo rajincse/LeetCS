@@ -102,11 +102,11 @@ namespace Problems
             return val > 0 && val < 27;
 
         }
-        public static void Main(string[] args)
-        {
-            string input = "2345";            
-            var result = new  DecodeWaysProblem().NumDecodings(input);
-            Console.WriteLine($"Input: {input} => {result}");            
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input = "2345";            
+        //     var result = new  DecodeWaysProblem().NumDecodings(input);
+        //     Console.WriteLine($"Input: {input} => {result}");            
+        // }
     }
 }
