@@ -35,12 +35,12 @@ namespace Problems
         }
 
 
-        public static void Main(string[] args)
-        {
-            int[] pre = new int[]{1,2,4,5,8,3,6,7};
-            int[] inOrder = new int[]{4,2,8,5,1,6,3,7};
-            TreeNode result = new ConstructBinaryTreeProblem().BuildTree(pre, inOrder);
-            Console.WriteLine($"input: {Utility.PrintArray<int>(pre)}, {Utility.PrintArray<int>(inOrder)}=>\n{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] pre = new int[]{1,2,4,5,8,3,6,7};
+        //     int[] inOrder = new int[]{4,2,8,5,1,6,3,7};
+        //     TreeNode result = new ConstructBinaryTreeProblem().BuildTree(pre, inOrder);
+        //     Console.WriteLine($"input: {Utility.PrintArray<int>(pre)}, {Utility.PrintArray<int>(inOrder)}=>\n{result}");
+        // }
     }
 }
