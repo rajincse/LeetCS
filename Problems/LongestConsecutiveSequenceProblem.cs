@@ -36,11 +36,11 @@ namespace Problems
             }
             return longestStreak;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{100, 4, 200, 1, 3, 2};
-            var result = new LongestConsecutiveSequenceProblem().LongestConsecutive(input);
-            Console.WriteLine($"Input: {Utility.PrintArray<int>(input)} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{100, 4, 200, 1, 3, 2};
+        //     var result = new LongestConsecutiveSequenceProblem().LongestConsecutive(input);
+        //     Console.WriteLine($"Input: {Utility.PrintArray<int>(input)} => {result}");
+        // }
     }
 }
