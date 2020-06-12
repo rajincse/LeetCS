@@ -28,11 +28,11 @@ namespace Problems
             }
             return maxProfit;
         }
-        public static void Main(string[] args)
-        {
-            int[] input = new int[]{7,17,1,2,3, 4, 6,5};
-            int result = new BuySellStockProblem().MaxProfit(input);
-            Console.WriteLine($"Input: {Utility.PrintArray<int>(input)} =>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] input = new int[]{7,17,1,2,3, 4, 6,5};
+        //     int result = new BuySellStockProblem().MaxProfit(input);
+        //     Console.WriteLine($"Input: {Utility.PrintArray<int>(input)} =>{result}");            
+        // }
     }
 }
