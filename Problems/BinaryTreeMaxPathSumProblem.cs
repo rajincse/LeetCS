@@ -35,12 +35,12 @@ namespace Problems
             return (localMaxSum,maxPathSum);
         }
 
-        public static void Main(string[] args)
-        {
-            TreeNode node = TreeNode.StringToTreeNode($"[-10, -1, 0, 1]");
-            var result = new BinaryTreeMaxPathSumProblem().MaxPathSum(node);
-            Console.WriteLine($"input :\n{node}\n => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     TreeNode node = TreeNode.StringToTreeNode($"[-10, -1, 0, 1]");
+        //     var result = new BinaryTreeMaxPathSumProblem().MaxPathSum(node);
+        //     Console.WriteLine($"input :\n{node}\n => {result}");
+        // }
 
     }
 }
