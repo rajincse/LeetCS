@@ -40,11 +40,11 @@ namespace Problems
             return char.ToUpper(c1).Equals(char.ToUpper(c2));
         }
 
-        public static void Main(string[] args)
-        {
-            string input = "12hah21";
-            var result = new ValidPalindromeProblem().IsPalindrome(input);
-            Console.WriteLine($"Input: {input} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string input = "12hah21";
+        //     var result = new ValidPalindromeProblem().IsPalindrome(input);
+        //     Console.WriteLine($"Input: {input} => {result}");
+        // }
     }
 }
