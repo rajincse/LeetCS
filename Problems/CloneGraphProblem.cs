@@ -45,27 +45,27 @@ namespace Problems
 
             return (nodeSet, adjacencyList);
         }
-        public static void Main(string[] args)
-        {
-            Node node1 = new Node(1);
-            Node node2 = new Node(2);
-            Node node3 = new Node(3);
-            Node node4 = new Node(4);
+        // public static void Main(string[] args)
+        // {
+        //     Node node1 = new Node(1);
+        //     Node node2 = new Node(2);
+        //     Node node3 = new Node(3);
+        //     Node node4 = new Node(4);
 
-            node1.neighbors.Add(node2);
-            node2.neighbors.Add(node1);
+        //     node1.neighbors.Add(node2);
+        //     node2.neighbors.Add(node1);
 
-            node1.neighbors.Add(node4);
-            node4.neighbors.Add(node1);
+        //     node1.neighbors.Add(node4);
+        //     node4.neighbors.Add(node1);
 
-            node3.neighbors.Add(node2);
-            node2.neighbors.Add(node3);
+        //     node3.neighbors.Add(node2);
+        //     node2.neighbors.Add(node3);
 
-            node3.neighbors.Add(node4);
-            node4.neighbors.Add(node3);
+        //     node3.neighbors.Add(node4);
+        //     node4.neighbors.Add(node3);
             
-            var result = new CloneGraphProblem().CloneGraph(node1);
-            Console.WriteLine($"Input: {node1.GetAdjacencyListString()} => \n{result.GetAdjacencyListString()}");
-        }
+        //     var result = new CloneGraphProblem().CloneGraph(node1);
+        //     Console.WriteLine($"Input: {node1.GetAdjacencyListString()} => \n{result.GetAdjacencyListString()}");
+        // }
     }
 }
