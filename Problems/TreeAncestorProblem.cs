@@ -73,13 +73,13 @@ namespace Problems
             }
         }
 
-        public static void Main(string[] args)
-        {
-             int n = 10;
-             int [] parent = new int[]{-1,0,1,2,0,1,0,4,7,1};
-             TreeAncestor ancestor = new TreeAncestor(10, parent);
-             var result = ancestor.GetKthAncestor(3, 3);
-             Console.WriteLine($"result:{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //      int n = 10;
+        //      int [] parent = new int[]{-1,0,1,2,0,1,0,4,7,1};
+        //      TreeAncestor ancestor = new TreeAncestor(n, parent);
+        //      var result = ancestor.GetKthAncestor(3, 3);
+        //      Console.WriteLine($"result:{result}");
+        // }
     }
 }
