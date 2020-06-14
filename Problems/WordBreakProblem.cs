@@ -64,12 +64,12 @@ namespace Problems
             }
             
         }
-        public static void Main(string[] args)
-        {
-            string s = "catsandog";
-            var dictString =  new List<string>{"cats", "dog", "sand", "and", "cat"};
-            var result = new WordBreakProblem().WordBreak(s, dictString);
-            Console.WriteLine($"Input: {s}, [{Utility.PrintList<string>(dictString)}] => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     string s = "catsandog";
+        //     var dictString =  new List<string>{"cats", "dog", "sand", "and", "cat"};
+        //     var result = new WordBreakProblem().WordBreak(s, dictString);
+        //     Console.WriteLine($"Input: {s}, [{Utility.PrintList<string>(dictString)}] => {result}");
+        // }
     }
 }
