@@ -35,9 +35,36 @@ namespace Common
         }
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            BuildStringValue(this, sb);
-            return sb.ToString();
+            if(HasCycle(this))
+            {
+                return $"{this.val} (Contains Cycle)";
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder();
+                BuildStringValue(this, sb);
+                return sb.ToString();
+            }
+            
+        }
+        private bool HasCycle(ListNode head) {
+            if(head == null)
+            {
+                return false;
+            }
+            ListNode slow = head;
+            ListNode fast = head;
+
+            while(fast != null && fast.next != null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+                if(slow == fast)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
     
