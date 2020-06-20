@@ -46,12 +46,12 @@ namespace Problems
                 forwardTail = forwardTailNext;                
             }
         }
-        public static void Main(string[] args)
-        {
-            ListNode node = ListNode.CreateFromInt(new int[]{1,2,3,4,5,6,7,8,9 });
-            string input = node.ToString();
-            new ReorderListProblem().ReorderList(node);
-            Console.WriteLine($"Input: {input} => {node}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     ListNode node = ListNode.CreateFromInt(new int[]{1,2,3,4,5,6,7,8,9 });
+        //     string input = node.ToString();
+        //     new ReorderListProblem().ReorderList(node);
+        //     Console.WriteLine($"Input: {input} => {node}");
+        // }
     }
 }
