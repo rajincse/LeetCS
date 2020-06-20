@@ -22,11 +22,11 @@ namespace Problems
 
             return maxProduct;
         }
-        public static void Main(string[] args)
-        {
-            int[] nums = new int[]{2,3,-2,-4, -50};
-            int result = new MaxProductSubArrayProblem().MaxProduct(nums);
-            Console.WriteLine($"Input: {Utility.PrintArray<int>(nums)} =>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] nums = new int[]{2,3,-2,-4, -50};
+        //     int result = new MaxProductSubArrayProblem().MaxProduct(nums);
+        //     Console.WriteLine($"Input: {Utility.PrintArray<int>(nums)} =>{result}");
+        // }
     }
 }
