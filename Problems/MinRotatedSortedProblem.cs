@@ -41,11 +41,11 @@ namespace Problems
                 }
             }
         }
-        public static void Main(string [] args)
-        {
-            int[] nums = new int[]{5,6,0,1,2,3,4};
-            var result = new MinRotatedSortedProblem().FindMin(nums);
-            Console.WriteLine($"Input: {Utility.PrintArray<int>(nums)} =>{result}"); 
-        }
+        // public static void Main(string [] args)
+        // {
+        //     int[] nums = new int[]{5,6,0,1,2,3,4};
+        //     var result = new MinRotatedSortedProblem().FindMin(nums);
+        //     Console.WriteLine($"Input: {Utility.PrintArray<int>(nums)} =>{result}"); 
+        // }
     }
 }
