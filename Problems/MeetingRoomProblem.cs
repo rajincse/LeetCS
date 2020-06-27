@@ -98,14 +98,14 @@ namespace Problems
             return roomCount;
         }
 
-        public static void Main(string[] args)
-        {
-            int[][] input = new int[][]{
-                new int[]{13, 15},
-                new int[]{1, 13},
-            };
-            var result = new MeetingRoomProblem().CanAttendMeetings(input);
-            Console.WriteLine($"Input:{Utility.Print2DArray<int>(input)} =>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[][] input = new int[][]{
+        //         new int[]{13, 15},
+        //         new int[]{1, 13},
+        //     };
+        //     var result = new MeetingRoomProblem().CanAttendMeetings(input);
+        //     Console.WriteLine($"Input:{Utility.Print2DArray<int>(input)} =>{result}");
+        // }
     }
 }
