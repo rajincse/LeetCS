@@ -57,6 +57,25 @@ namespace Problems
             return visitedCount == totalVertices;
             
         }
+        
+        private void DfsVisit(int[,] graph, int currentVertex, State[] states)
+        {
+            if(graph == null || graph.Length == 0 || graph.Rank != 2 || graph.GetLength(0) != graph.GetLength(1)|| currentVertex < 0 || currentVertex >= graph.GetLength(0))
+                {
+                    return ;
+                }
+            
+            states[currentVertex] = State.Visiting;
+            for(int neighbor=0;neighbor<graph.GetLength(0);neighbor++)
+            {
+                if(graph[currentVertex, neighbor] == 1 && states[neighbor] == State.NotVisited)
+                {
+                    DfsVisit(graph, neighbor, states);
+                }
+            }
+            states[currentVertex] = State.Visited;
+            
+        }
 
         // public static void Main(string[] args)
         // {
