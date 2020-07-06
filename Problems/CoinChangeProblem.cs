@@ -58,12 +58,12 @@ namespace Problems
             dp[amount-1] = min;
             return dp[amount-1];
         }
-        public static void Main(string[] args)
-        {
-            int[] coins = new int[]{1,2,5};
-            int amount = 11;
-            var result = new CoinChangeProblem().CoinChange(coins, amount);
-            Console.WriteLine($"Input: {Utility.PrintArray<int>(coins)}, {amount} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     int[] coins = new int[]{1,2,5};
+        //     int amount = 11;
+        //     var result = new CoinChangeProblem().CoinChange(coins, amount);
+        //     Console.WriteLine($"Input: {Utility.PrintArray<int>(coins)}, {amount} => {result}");
+        // }
     }
 }
