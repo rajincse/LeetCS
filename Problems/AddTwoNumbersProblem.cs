@@ -29,12 +29,12 @@ namespace  Problems
             return result;
         }
 
-        public static void Main(string [] args)
-        {
-            ListNode l1 = ListNode.CreateFromInt(new int[]{9,9,9});
-            ListNode l2 = ListNode.CreateFromInt(new int[]{9,8});
-            var result = new AddTwoNumbersProblem().AddTwoNumbers(l1, l2);
-            Console.WriteLine($"{l1} + {l2} => {result}");
-        }
+        // public static void Main(string [] args)
+        // {
+        //     ListNode l1 = ListNode.CreateFromInt(new int[]{9,9,9});
+        //     ListNode l2 = ListNode.CreateFromInt(new int[]{9,8});
+        //     var result = new AddTwoNumbersProblem().AddTwoNumbers(l1, l2);
+        //     Console.WriteLine($"{l1} + {l2} => {result}");
+        // }
     }
 }
