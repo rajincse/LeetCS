@@ -23,34 +23,17 @@ namespace Problems
                     {
                         totalCost += cost[left];
                         charArray[left] = deletedChar;
+                        left++;
+                        right = left+1;                        
                     }
                     else
                     {
                         totalCost += cost[right];
                         charArray[right] = deletedChar;
+                        right++;
                     }
-                    Console.WriteLine($"{left}, {right} => {totalCost}");
-                    int oldRight = right;
-                    for(int i = left;i< charArray.Length;i++)
-                    {
-                        if(charArray[i] != deletedChar)
-                        {
-                            left = i;
-                            for(int j= i+1;j<charArray.Length;j++)
-                            {
-                                if(charArray[j] != deletedChar)
-                                {
-                                    right = j;
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                    }
-                    if(oldRight == right)
-                    {
-                        break;
-                    }
+                    // Console.WriteLine($"{left}, {right} => {totalCost}");
+                    
                 }
                 else
                 {
@@ -63,14 +46,12 @@ namespace Problems
 
         }
 
-        public static void Main(string[] args)
-        {
-            //"aaabbbabbbb"
-// [3,5,10,7,5,3,5,5,4,8,1]
-            var s = "aaabbbabbbb";
-            var cost = new int[] {3,5,10,7,5,3,5,5,4,8,1};
-            var result = new MinimumDeletionProblem().MinCost(s, cost);
-            Console.WriteLine($"{s}, [{Utility.PrintArray<int>(cost)}] => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var s = "aaabbbabbbb";
+        //     var cost = new int[] {3,5,10,7,5,3,5,5,4,8,1};
+        //     var result = new MinimumDeletionProblem().MinCost(s, cost);
+        //     Console.WriteLine($"{s}, [{Utility.PrintArray<int>(cost)}] => {result}");
+        // }
     }
 }
