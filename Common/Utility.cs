@@ -47,6 +47,31 @@ namespace  Common
             return sb.ToString();
         }
 
+        public static string Print2DArray<T>(T[,] arr2D, char arraySeparator =',')
+        {
+            if(arr2D == null)
+            {
+                return null;
+            }
+            StringBuilder sb = new StringBuilder();
+            int rows = arr2D.GetLength(0);
+            int cols = arr2D.GetLength(1);
+            sb.Append("[");
+            for(int i=0;i<rows;i++)
+            {
+                sb.Append("[");
+                for(int j=0;j< cols;j++)
+                {
+                    sb.Append(arr2D[i,j]);
+                    sb.Append(",");
+                }
+                
+                sb.Append("]");
+                sb.Append(arraySeparator);
+            }
+            sb.Append("]");
+            return sb.ToString();
+        }
         public static string PrintList<T>(IList<T> arr)
         {   
             if(arr == null) return null;     
