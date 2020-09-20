@@ -2,69 +2,43 @@ using System;
 using Common;
 
 namespace Problems
-{
-    // Did not get accepted
+{    
     public class MaxNonNegativeProductProblem
     {
         public int MaxProductPath(int[][] grid) {
-            (_, var max) = GetMinMaxProduct(grid, 0,0);
-
-            if(max == null || max.Value < 0 )
+            if(grid == null || grid.Length == 0 || grid[0] == null || grid[0].Length ==0)
             {
                 return -1;
             }
-            return max.Value;
-            
+            return MaxProductDp(grid);
+
         }
-
-        public (int?, int?) GetMinMaxProduct(int[][] grid, int startRow, int startCol)
+        
+        private int MaxProductDp(int[][] g)
         {
-            if(grid == null || grid.Length == 0 || grid[0] == null || grid[0].Length ==0
-            ||
-            startRow < 0 || startRow >= grid.Length || startCol <0 || startCol >= grid[0].Length 
-            )
-            {
-                return (null, null);
-            }
-            int currentVal = grid[startRow][startCol];
-            if(startRow == grid.Length-1 && startCol == grid[0].Length-1)
-            {
-                return (currentVal, currentVal);
-            }
-            int? currentMin = null;
-            int? currentMax = null;
-            // go right
-            (var min, var max) = GetMinMaxProduct(grid, startRow, startCol+1);
-            (currentMin, currentMax) = GetCurrentMinMax(currentMin, currentMax, min, max, currentVal);
-
-            //go down 
-            (min,max) = GetMinMaxProduct(grid, startRow+1, startCol);
-            (currentMin, currentMax) = GetCurrentMinMax(currentMin, currentMax, min, max, currentVal);
-
-            // //go cross 
-            // (min,max) = GetMinMaxProduct(grid, startRow+1, startCol+1);
-            // (currentMin, currentMax) = GetCurrentMinMax(currentMin, currentMax, min, max, currentVal);
-
-            return (currentMin, currentMax);
-        }
-
-        private (int?, int?) GetCurrentMinMax(int? currentMin, int? currentMax, int? min, int? max, int currentVal)
-        {
-            if(min != null && max != null )
-            {
-                if(currentMin == null)
-                {
-                    currentMin =Math.Min( currentVal * min.Value, currentVal * max.Value);
+            int m = g.Length, n = g[0].Length, mod = 1_000_000_007;
+            var dp = new long[m,n,2];
+            dp[0,0,0] = dp[0,0,1] = g[0][0];
+            for (int i = 0; i < m; i++) {
+                
+                for (int j = 0; j < n; j++) {                
+                    
+                    if (i == 0 && j == 0) continue;
+                    long a = 0, b = 0;
+                    if (i == 0) {
+                        dp[i,j,0] = dp[i,j,1] = g[i][j] * dp[i,j - 1,0];
+                    } else if (j == 0) { 
+                        dp[i,j,0] = dp[i,j,1] = g[i][j] * dp[i - 1,j,0];
+                    } else {
+                        a = g[i][j] * Math.Max(dp[i,j - 1,0], dp[i - 1,j,0]);
+                        b = g[i][j] * Math.Min(dp[i,j - 1,1], dp[i - 1,j,1]);
+                        dp[i,j,0] = Math.Max(a, b);
+                        dp[i,j,1] = Math.Min(a, b);
+                    }
                 }
-                currentMin =Math.Min(currentMin.Value, Math.Min( currentVal * min.Value, currentVal * max.Value));
-                if(currentMax == null)
-                {
-                    currentMax =Math.Max( currentVal * min.Value, currentVal * max.Value);
-                }
-                currentMax =Math.Max(currentMax.Value, Math.Max( currentVal * min.Value, currentVal * max.Value));
             }
-
-            return (currentMin, currentMax);
+            if (dp[m - 1,n - 1,0] < 0) return -1;
+            return (int) ((dp[m - 1,n - 1,0]) % mod);
         }
         // public static void Main(string[] args)
         // {
