@@ -78,7 +78,7 @@ namespace  Common
             return string.Join<T>(",", arr);
         }
 
-        public static string Print2DList<T>(IList<IList<T>> list2D)
+        public static string Print2DList<T>(IList<IList<T>> list2D, char arraySeparator =',')
         {
             if(list2D == null)
             {
@@ -90,7 +90,8 @@ namespace  Common
             {
                 sb.Append("[");
                 sb.Append(string.Join(",", list));
-                sb.Append("],");
+                sb.Append("]");
+                sb.Append(arraySeparator);
             }
             sb.Append("]");
             return sb.ToString();
