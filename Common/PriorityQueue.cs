@@ -67,8 +67,8 @@ namespace Common
         }
         
         private void HeapIncreaseKey(int index , T value)
-        {
-            if(!_heap[index].Equals(default(T)))
+        {            
+            if(_heap[index] != null && !_heap[index].Equals(default(T)))
             {
                 throw new InvalidOperationException("Heap value not default");
             }
