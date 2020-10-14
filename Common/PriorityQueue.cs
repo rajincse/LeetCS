@@ -51,11 +51,12 @@ namespace Common
             int right = RightIndex(index);
             int exchangeCandidate = index;
 
-            if(left< HeapSize && _heap[left].CompareTo(_heap[index]) < 0)
+            if(left< HeapSize && _heap[left].CompareTo(_heap[exchangeCandidate]) < 0)
             {
                 exchangeCandidate = left;
             }
-            else if (right< HeapSize && _heap[right].CompareTo(_heap[index]) < 0){
+            
+            if (right< HeapSize && _heap[right].CompareTo(_heap[exchangeCandidate]) < 0){
                 exchangeCandidate = right;
             }
 
