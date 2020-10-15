@@ -245,39 +245,39 @@ namespace Problems
         public FrequencyNode Parent { get; set; }
     }
     public class LfuCacheProblem{
-        public static void Main(string[] args)
-        {
+        // public static void Main(string[] args)
+        // {
             
-            StringBuilder sb = new StringBuilder();
-            LFUCache cache = new LFUCache(2);
-            cache.Put(1, 1);
+        //     StringBuilder sb = new StringBuilder();
+        //     LFUCache cache = new LFUCache(2);
+        //     cache.Put(1, 1);
             
-            cache.Put(2, 2);
+        //     cache.Put(2, 2);
             
-            sb.Append(cache.Get(1));             
-            sb.Append("\n");
+        //     sb.Append(cache.Get(1));             
+        //     sb.Append("\n");
             
-            cache.Put(3, 3);
+        //     cache.Put(3, 3);
             
-            sb.Append(cache.Get(2)); 
-            sb.Append("\n");
+        //     sb.Append(cache.Get(2)); 
+        //     sb.Append("\n");
             
-            sb.Append(cache.Get(3)); 
-            sb.Append("\n");
+        //     sb.Append(cache.Get(3)); 
+        //     sb.Append("\n");
             
-            cache.Put(4, 4);
+        //     cache.Put(4, 4);
             
-            sb.Append(cache.Get(1)); 
-            sb.Append("\n");
+        //     sb.Append(cache.Get(1)); 
+        //     sb.Append("\n");
             
-            sb.Append(cache.Get(3)); 
-            sb.Append("\n");
+        //     sb.Append(cache.Get(3)); 
+        //     sb.Append("\n");
             
-            sb.Append(cache.Get(4)); 
-            sb.Append("\n");
+        //     sb.Append(cache.Get(4)); 
+        //     sb.Append("\n");
             
 
-            Console.WriteLine($"{sb.ToString()}");
-        }
+        //     Console.WriteLine($"{sb.ToString()}");
+        // }
     }
 }
