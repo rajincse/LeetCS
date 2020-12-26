@@ -40,15 +40,15 @@ namespace Problems
             return ans < int.MaxValue? ans: -1;
         }
 
-        public static void Main(string[] args)
-        {
-            int[] bulbs = new int[]{3,2,5,4,1,6,7};
-            int k = 1;
+        // public static void Main(string[] args)
+        // {
+        //     int[] bulbs = new int[]{3,2,5,4,1,6,7};
+        //     int k = 1;
 
-            var result = new KEmptySlotsProblem().KEmptySlots(bulbs, k);
-            Console.WriteLine($"{Utility.PrintArray<int>(bulbs)}, {k} => {result}");
+        //     var result = new KEmptySlotsProblem().KEmptySlots(bulbs, k);
+        //     Console.WriteLine($"{Utility.PrintArray<int>(bulbs)}, {k} => {result}");
 
-        }
+        // }
     }
     
 }
