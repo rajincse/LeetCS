@@ -96,5 +96,39 @@ namespace  Common
             sb.Append("]");
             return sb.ToString();
         }
+
+        public static string PrintDictionary<TKey, TVal>(IDictionary<TKey, TVal> dictionary)
+        {
+            if(dictionary == null || dictionary.Count == 0)
+            {
+                return string.Empty;
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.Append("{");
+            foreach(TKey key in dictionary.Keys)
+            {                
+                sb.Append($"{{{key.ToString()}}}=>{{{dictionary[key].ToString()}}}\r\n");
+            }
+            sb.Append("}");
+
+            return sb.ToString();
+        }
+
+        public static string Print2dDictionary<T1, T2, TVal>(IDictionary<T1, IDictionary<T2, TVal>> dictionary)
+        {
+            if(dictionary == null || dictionary.Count == 0)
+            {
+                return string.Empty;
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.Append("{");
+            foreach(T1 key in dictionary.Keys)
+            {              
+                sb.Append($"{{{key.ToString()}}}=>{{{PrintDictionary<T2, TVal>(dictionary[key])}}}\r\n");
+            }
+            sb.Append("}");
+
+            return sb.ToString();
+        }
     }
 }
