@@ -107,20 +107,20 @@ namespace Problems
             return stones.Length - seenSet.Count;
         }
 
-        public static void Main(string[] args)
-        {
-            var stones = new int[][]
-            {
-                new int[]{0,0},
-                new int[]{0,2},
-                new int[]{1,1},                
-                new int[]{2,0},
-                new int[]{2,2},
-            };
+        // public static void Main(string[] args)
+        // {
+        //     var stones = new int[][]
+        //     {
+        //         new int[]{0,0},
+        //         new int[]{0,2},
+        //         new int[]{1,1},                
+        //         new int[]{2,0},
+        //         new int[]{2,2},
+        //     };
 
-            var result = new RemoveStoneProblem().RemoveStones(stones);
+        //     var result = new RemoveStoneProblem().RemoveStones(stones);
 
-            Console.WriteLine($"{Utility.Print2DArray<int>(stones)} => {result}");
-        }
+        //     Console.WriteLine($"{Utility.Print2DArray<int>(stones)} => {result}");
+        // }
     }
 }

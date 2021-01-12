@@ -65,7 +65,6 @@ namespace Problems
                     }
                 }
             }
-
             return ans < int.MaxValue? ans: 0;
         }
 
