@@ -43,11 +43,11 @@ namespace Basic
         }
 
 
-        public static void Main(string[] args)
-        {
-            var source = new int[]{1,2,3};
-            var result = new PermutationProblem().Permute(source);
-            Console.WriteLine($"{Utility.PrintArray<int>(source)} => \r\n{Utility.Print2DList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var source = new int[]{1,2,3};
+        //     var result = new PermutationProblem().Permute(source);
+        //     Console.WriteLine($"{Utility.PrintArray<int>(source)} => \r\n{Utility.Print2DList<int>(result)}");
+        // }
     }
 }
