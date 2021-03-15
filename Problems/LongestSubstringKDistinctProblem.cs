@@ -5,13 +5,13 @@ namespace Problems
 {
     public class LongestSubstringKDistinctProblem
     {
-        public static void Main(string[] args)
-        {
-            var s = "a@b$5!a8alskj234jasdf*()@$&%&#FJAvjjdaurNNMa8ASDF-0321jf?>{}L:fh";
-            int k = 10;
-            var result = new LongestSubstringKDistinctProblem().LengthOfLongestSubstringKDistinct(s, k);
-            Console.WriteLine($"{s}, {k} => {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var s = "a@b$5!a8alskj234jasdf*()@$&%&#FJAvjjdaurNNMa8ASDF-0321jf?>{}L:fh";
+        //     int k = 10;
+        //     var result = new LongestSubstringKDistinctProblem().LengthOfLongestSubstringKDistinct(s, k);
+        //     Console.WriteLine($"{s}, {k} => {result}");
+        // }
 
         public int LengthOfLongestSubstringKDistinct(string s, int k) {
             if(s == null || s.Length ==0 || k <=0)
