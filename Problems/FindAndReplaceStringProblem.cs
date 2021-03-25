@@ -68,19 +68,19 @@ namespace Problems
             return true;
         }
 
-        public static void Main(string[] args)
-        {
-            //"reauaqyxle"
-            // [4,6,2]
-            // ["aq","yxl","au"]
-            // ["c","dh","ev"]
-            var S = "reauaqyxle";
-            var indexes = new int[] {4,6,2}; 
-            var sources = new string[]{"aq","yxl","au"};
-            var targets = new string[]{"c","dh","ev"};
-            Console.WriteLine($"{S}, {Utility.PrintArray<int>(indexes)}, {Utility.PrintArray<string>(sources)}, {Utility.PrintArray<string>(targets)} => ");
-            var result = new FindAndReplaceStringProblem().FindReplaceString(S, indexes, sources, targets);
-            Console.WriteLine(result);
-        }
+        // public static void Main(string[] args)
+        // {
+        //     //"reauaqyxle"
+        //     // [4,6,2]
+        //     // ["aq","yxl","au"]
+        //     // ["c","dh","ev"]
+        //     var S = "reauaqyxle";
+        //     var indexes = new int[] {4,6,2}; 
+        //     var sources = new string[]{"aq","yxl","au"};
+        //     var targets = new string[]{"c","dh","ev"};
+        //     Console.WriteLine($"{S}, {Utility.PrintArray<int>(indexes)}, {Utility.PrintArray<string>(sources)}, {Utility.PrintArray<string>(targets)} => ");
+        //     var result = new FindAndReplaceStringProblem().FindReplaceString(S, indexes, sources, targets);
+        //     Console.WriteLine(result);
+        // }
     }
 }
