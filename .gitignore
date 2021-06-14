@@ -23,3 +23,4 @@ obj/Debug/netcoreapp3.1/LeetCS.genruntimeconfig.cache
 obj/Debug/netcoreapp3.1/LeetCS.pdb
 obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
 obj/Debug/netcoreapp3.1/LeetCS.csproj.AssemblyReference.cache
+Problems/FindCelebrityProblem.cs
