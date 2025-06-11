@@ -40,7 +40,8 @@ namespace Problems
         }
         // public static void Main(string[] args)
         // {
-        //     string tree = $"[1,2,3,4,5,6,7,null, null, 8]";
+        //     // string tree = $"[1,2,3,4,5,6,7,null, null, 8]";
+        //     var tree = "[1,2,3,4,5,null, null, 6, null, null, 7, 8, null,null,9]";
         //     TreeNode node = TreeNode.StringToTreeNode(tree);
         //     var result = new DiameterOfBinaryTreeProblem().DiameterOfBinaryTree(node);
         //     Console.WriteLine($"Input: \n{node}\n=>{result}");
