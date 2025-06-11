@@ -32,7 +32,7 @@ namespace Problems
                 var treeColumn = queue.Dequeue();
                 if (!hashTable.ContainsKey(treeColumn.ColumnIndex))
                 {
-                    var list = new List<int>();
+                    hashTable[treeColumn.ColumnIndex] = new List<int>();
                 }
                 hashTable[treeColumn.ColumnIndex].Add(treeColumn.Node.val);
 
@@ -47,10 +47,15 @@ namespace Problems
                 }
             }
             var result = new List<IList<int>>();
+            var keys = hashTable.Keys.ToList();
+            keys.Sort();
 
-            foreach (var kvp in hashTable)
+            foreach (var key in keys)
             {
-                result.Add(kvp.Value.ToList());
+                if (hashTable.ContainsKey(key))
+                {
+                    result.Add(hashTable[key]);
+                }
             }
             return result;
         }
@@ -61,7 +66,7 @@ namespace Problems
             var tree = "[1,2,3,4,5,null, null, 6, null, null, 7, 8, null,null,9]";
             TreeNode node = TreeNode.StringToTreeNode(tree);
             var result = new BinaryTreeVerticalOrderProblem().VerticalOrder(node);
-            Console.WriteLine($"Input: \n{node}\n=>{result}");
+            Console.WriteLine($"Input: \n{node}\n=>{Utility.Print2DList<int>(result)}");
         }
     }
 }
