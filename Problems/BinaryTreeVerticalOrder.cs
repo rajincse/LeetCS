@@ -22,6 +22,12 @@ namespace Problems
         }
         public IList<IList<int>> VerticalOrder(TreeNode root)
         {
+            var result = new List<IList<int>>();
+
+            if (root is null)
+            {
+                return result;
+            }
             var queue = new Queue<TreeColumn>();
             var hashTable = new Dictionary<int, List<int>>();
 
@@ -46,7 +52,7 @@ namespace Problems
                     queue.Enqueue(new TreeColumn(treeColumn.Node.right, treeColumn.ColumnIndex + 1));
                 }
             }
-            var result = new List<IList<int>>();
+            
             var keys = hashTable.Keys.ToList();
             keys.Sort();
 
@@ -60,13 +66,13 @@ namespace Problems
             return result;
         }
 
-        public static void Main(string[] args)
-        {
-            // string tree = $"[1,2,3,4,5,6,7,null, null, 8]";
-            var tree = "[1,2,3,4,5,null, null, 6, null, null, 7, 8, null,null,9]";
-            TreeNode node = TreeNode.StringToTreeNode(tree);
-            var result = new BinaryTreeVerticalOrderProblem().VerticalOrder(node);
-            Console.WriteLine($"Input: \n{node}\n=>{Utility.Print2DList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     // string tree = $"[1,2,3,4,5,6,7,null, null, 8]";
+        //     var tree = "[1,2,3,4,5,null, null, 6, null, null, 7, 8, null,null,9]";
+        //     TreeNode node = TreeNode.StringToTreeNode(tree);
+        //     var result = new BinaryTreeVerticalOrderProblem().VerticalOrder(node);
+        //     Console.WriteLine($"Input: \n{node}\n=>{Utility.Print2DList<int>(result)}");
+        // }
     }
 }
