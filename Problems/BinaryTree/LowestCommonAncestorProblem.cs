@@ -19,18 +19,22 @@ namespace Problems.BinaryTree
         {
             return this.TreeNode.ToString();
         }
-
-        public static NodeWithParent FromTreeNode(TreeNode treeNode)
+    }
+    public class LowestCommonAncestorProblem
+    {
+        public Dictionary<int, NodeWithParent> NodeMap { get; set; }
+        public NodeWithParent GenerateNodeWithParent(TreeNode treeNode)
         {
             if (treeNode is null)
             {
                 return null;
             }
+
             var node = new NodeWithParent();
             node.TreeNode = treeNode;
             node.val = treeNode.val;
-            node.left = FromTreeNode(treeNode.left);
-            node.right = FromTreeNode(treeNode.right);
+            node.left = GenerateNodeWithParent(treeNode.left);
+            node.right = GenerateNodeWithParent(treeNode.right);
 
             if (node.left is not null)
             {
@@ -41,30 +45,30 @@ namespace Problems.BinaryTree
             {
                 node.right.parent = node;
             }
+            this.NodeMap[treeNode.val] = node;
 
             return node;
         }
-    }
-    public class LowestCommonAncestorProblem
-    {
         public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
         {
-            var pWithParent = NodeWithParent.FromTreeNode(p);
-            var qWithParent = NodeWithParent.FromTreeNode(q);
+            this.NodeMap = new Dictionary<int, NodeWithParent>();
+            var rootWithParent = this.GenerateNodeWithParent(root);
+            var pWithParent = this.NodeMap[p.val];
+            var qWithParent = this.NodeMap[q.val];
 
-            var ancestor = new HashSet<TreeNode>();
+            var ancestor = new HashSet<int>();
 
             var node = pWithParent;
 
             while (node != null)
             {
-                ancestor.Add(node.TreeNode);
+                ancestor.Add(node.TreeNode.val);
                 node = node.parent;
             }
 
             node = qWithParent;
 
-            while (!ancestor.Contains(node.TreeNode))
+            while (node != null && !ancestor.Contains(node.TreeNode.val))
             {
                 node = node.parent;
             }
@@ -72,15 +76,15 @@ namespace Problems.BinaryTree
             return node.TreeNode;
         }
 
-        public static void Main(string[] args)
-        {
-            var nodeP = TreeNode.StringToTreeNode("[5,6,2,null,null,7,4]");
-            var nodeQ = TreeNode.StringToTreeNode("[1,0,8]");
-            var root = new TreeNode(3);
-            root.left = nodeP;
-            root.right = nodeQ;
-            var result = new LowestCommonAncestorProblem().LowestCommonAncestor(root, nodeP, nodeQ);
-            Console.WriteLine($"root: {root}p:{nodeP.val},\nq:{nodeQ.val},\n=>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var nodeP = TreeNode.StringToTreeNode("[5,6,2,null,null,7,4]");
+        //     var nodeQ = TreeNode.StringToTreeNode("[1,0,8]");
+        //     var root = new TreeNode(3);
+        //     root.left = nodeP;
+        //     root.right = nodeQ;
+        //     var result = new LowestCommonAncestorProblem().LowestCommonAncestor(root, nodeP, nodeQ);
+        //     Console.WriteLine($"root: {root}p:{nodeP.val},\nq:{nodeQ.val},\n=>{result}");
+        // }
     }
 }
