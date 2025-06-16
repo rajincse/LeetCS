@@ -51,12 +51,12 @@ namespace Problems.BinaryTree
             return null;
         }
 
-        public static void Main(string[] args)
-        {
-            var nodeP = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[5,6,2,null,null,7,4]"));
-            var nodeQ = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[1,0,8]"));
-            var result = new LowestCommonAncestorIIIProblem().LowestCommonAncestor(nodeP, nodeQ);
-            Console.WriteLine($"p: \n{nodeP},\nq:\n{nodeQ},\n=>{result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var nodeP = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[5,6,2,null,null,7,4]"));
+        //     var nodeQ = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[1,0,8]"));
+        //     var result = new LowestCommonAncestorIIIProblem().LowestCommonAncestor(nodeP, nodeQ);
+        //     Console.WriteLine($"p: \n{nodeP},\nq:\n{nodeQ},\n=>{result}");
+        // }
     }
 }
