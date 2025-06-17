@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/?envType=company&envId=facebook&favoriteSlug=facebook-thirty-days
 
 using System;
+using System.Collections.Generic;
 using Common;
 
 namespace Problems.BinaryTree
@@ -48,13 +49,30 @@ namespace Problems.BinaryTree
     {
         public Node LowestCommonAncestor(Node p, Node q)
         {
-            return null;
+            var ancestors = new HashSet<Node>();
+
+            var node = p;
+
+            while (node != null)
+            {
+                ancestors.Add(node);
+                node = node.parent;
+            }
+
+            node = q;
+            while (node != null && !ancestors.Contains(node))
+            {
+                node = node.parent;
+            }
+
+            return node;
         }
 
         // public static void Main(string[] args)
         // {
-        //     var nodeP = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[5,6,2,null,null,7,4]"));
-        //     var nodeQ = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[1,0,8]"));
+        //     var root = Node.FromTreeNode(Common.TreeNode.StringToTreeNode("[3,5,1,6,2,0,8,null,null,7,4]"));
+        //     var nodeP = root.left;
+        //     var nodeQ = root.right;
         //     var result = new LowestCommonAncestorIIIProblem().LowestCommonAncestor(nodeP, nodeQ);
         //     Console.WriteLine($"p: \n{nodeP},\nq:\n{nodeQ},\n=>{result}");
         // }
