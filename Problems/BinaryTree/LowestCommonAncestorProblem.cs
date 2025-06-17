@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/
 
 using System;
 using System.Collections.Generic;
@@ -53,8 +54,14 @@ namespace Problems.BinaryTree
         {
             this.NodeMap = new Dictionary<int, NodeWithParent>();
             var rootWithParent = this.GenerateNodeWithParent(root);
-            var pWithParent = this.NodeMap[p.val];
-            var qWithParent = this.NodeMap[q.val];
+            var pWithParent = this.NodeMap.ContainsKey(p.val) ? this.NodeMap[p.val] : null;
+            var qWithParent = this.NodeMap.ContainsKey(q.val)? this.NodeMap[q.val]: null;
+
+            // For LowestCommonAncestorII provkem
+            if (pWithParent is null || qWithParent is null)
+            {
+                return null;
+            }
 
             var ancestor = new HashSet<int>();
 
@@ -83,6 +90,8 @@ namespace Problems.BinaryTree
         //     var root = new TreeNode(3);
         //     root.left = nodeP;
         //     root.right = nodeQ;
+
+        //     nodeQ = TreeNode.StringToTreeNode("[10,11,12]");
         //     var result = new LowestCommonAncestorProblem().LowestCommonAncestor(root, nodeP, nodeQ);
         //     Console.WriteLine($"root: {root}p:{nodeP.val},\nq:{nodeQ.val},\n=>{result}");
         // }
