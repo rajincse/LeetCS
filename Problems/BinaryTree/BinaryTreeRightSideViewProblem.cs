@@ -16,9 +16,14 @@ namespace Problems.BinaryTree
         public IList<int> RightSideView(TreeNode root)
         {
             var result = new List<int>();
+            if (root is null)
+            {
+                return result;
+            }
             var queue = new Queue<TreeNodeWithLevel>();
             queue.Enqueue(new TreeNodeWithLevel { TreeNode = root, Level = 0 });
-            var level = -1;
+            var currentLevel = 0;
+            var lastCurrentLevelValue = root.val;
             while (queue.Any())
             {
                 var node = queue.Dequeue();
@@ -30,21 +35,24 @@ namespace Problems.BinaryTree
                 {
                     queue.Enqueue(new TreeNodeWithLevel { TreeNode = node.TreeNode.right, Level = node.Level + 1 });
                 }
-                if (level != node.Level)
+
+                if (node.Level > currentLevel)
                 {
-                    result.Add(node.TreeNode.val);
-                    level = node.Level;
+                    result.Add(lastCurrentLevelValue);
                 }
+                currentLevel = node.Level;
+                lastCurrentLevelValue = node.TreeNode.val;
             }
+            result.Add(lastCurrentLevelValue);
 
             return result;
         }
 
-        public static void Main(string[] args)
-        {
-            var root = TreeNode.StringToTreeNode("[1,2,3,null,5,null,4]");
-            var result = new BinaryTreeRightSideViewProblem().RightSideView(root);
-            Console.WriteLine($"root: \n{root},\nresult=>{Utility.PrintList<int>(result)}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var root = TreeNode.StringToTreeNode("[]");
+        //     var result = new BinaryTreeRightSideViewProblem().RightSideView(root);
+        //     Console.WriteLine($"root: \n{root},\nresult=>{Utility.PrintList<int>(result)}");
+        // }
     }
 }
