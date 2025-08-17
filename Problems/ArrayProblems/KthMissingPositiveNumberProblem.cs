@@ -8,7 +8,34 @@ namespace Problems.ArrayProblems
     {
         public int FindKthPositive(int[] arr, int k)
         {
-            return 0;
+            if (arr is null || arr.Length == 0)
+            {
+                return k;
+            }
+
+            var candidate = k;
+            var expectedItem = 1;
+
+            foreach (var arrItem in arr)
+            {
+                if (arrItem > candidate)
+                {
+                    return candidate;
+                }
+                else if (expectedItem == arrItem)
+                {
+                    expectedItem = arrItem + 1;
+                    candidate++;
+                }
+                else if (arrItem > expectedItem)
+                {
+                    var diff = arrItem - expectedItem;
+                    candidate += diff;
+                    expectedItem = arrItem + 1;
+                }
+            }
+
+            return candidate;
         }
 
         public static void Main(string[] args)
