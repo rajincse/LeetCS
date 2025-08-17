@@ -22,28 +22,20 @@ namespace Problems.ArrayProblems
                 {
                     return candidate;
                 }
-                else if (expectedItem == arrItem)
-                {
-                    expectedItem = arrItem + 1;
-                    candidate++;
-                }
-                else if (arrItem > expectedItem)
-                {
-                    var diff = arrItem - expectedItem;
-                    candidate += diff;
-                    expectedItem = arrItem + 1;
-                }
+
+                expectedItem = arrItem + 1;
+                candidate++;
             }
 
             return candidate;
         }
 
-        public static void Main(string[] args)
-        {
-            var input = new int[] { 2, 3, 4, 7, 11 };
-            var k = 5;
-            var result = new KthMissingPositiveNumberProblem().FindKthPositive(input, k);
-            Console.WriteLine($"arr: {Utility.PrintArray<int>(input)}, k:{k}=> {result}");
-        }
+        // public static void Main(string[] args)
+        // {
+        //     var input = new int[] { 2, 3, 4, 7, 11 };
+        //     var k = 5;
+        //     var result = new KthMissingPositiveNumberProblem().FindKthPositive(input, k);
+        //     Console.WriteLine($"arr: {Utility.PrintArray<int>(input)}, k:{k}=> {result}");
+        // }
     }
 }
