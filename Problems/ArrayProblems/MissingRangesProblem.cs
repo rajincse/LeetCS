@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/missing-ranges/
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Common;
 
@@ -10,11 +11,31 @@ namespace Problems.ArrayProblems
     {
         public IList<IList<int>> FindMissingRanges(int[] nums, int lower, int upper)
         {
-            return null;
+            var result = new List<IList<int>>();
+            var currentLower = lower;
+            foreach (var num in nums)
+            {
+                if (num > currentLower && num < upper)
+                {
+                    var range = new List<int>() { currentLower, num - 1 };
+                    result.Add(range);
+                    currentLower = num+1;
+                }
+                else if (num > upper)
+                {
+                    break;
+                }
+            }
+            if (currentLower < upper)
+            {
+                var range = new List<int>() { currentLower, upper };
+                result.Add(range);
+            }
+            return result;
         }
         public static void Main(string[] args)
         {
-            var input = new int[] { 0,1,3,50,75};
+            var input = new int[] { 0,1,3,50,75 };
             var lower = 0;
             var upper = 99;
             var result = new MissingRangesProblem().FindMissingRanges(input, lower, upper);
