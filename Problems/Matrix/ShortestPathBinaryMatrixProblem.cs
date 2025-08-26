@@ -29,6 +29,7 @@ namespace Problems.Matrix
             }
             this.VisitedMap = new bool[grid.Length, grid[0].Length];
             this.Grid = grid;
+            this.Queue = new Queue<MatrixCell>();
 
             this.Visit(0, 0, 0);
 
@@ -66,29 +67,29 @@ namespace Problems.Matrix
 
         private void Visit(int row, int col, int level)
         {
-            var endRow = VisitedMap.Length-1;
-            var endColumn = VisitedMap.GetLongLength(0) - 1;
+            var endRow = this.Grid.Length-1;
+            var endColumn = this.Grid[0].Length-1;
             if (row <= endRow && col <= endColumn && row >= 0 && col >= 0 && this.Grid[row][col] == 0 && !this.VisitedMap[row, col])
             {
-                var bottomNode = new MatrixCell()
+                var node = new MatrixCell()
                 {
                     Row = row,
                     Column = col,
                     Level = level
                 };
-                this.Queue.Enqueue(bottomNode);
+                this.Queue.Enqueue(node);
                 this.VisitedMap[row, col] = true;
             }
         }
 
-        public static void Main(string[] args)
-        {
-            var input = new int[][]{
-                [0,1],[1,0]
-            };
+        // public static void Main(string[] args)
+        // {
+        //     var input = new int[][]{
+        //         [0,1],[1,0]
+        //     };
 
-            var result = new ShortestPathBinaryMatrixProblem().ShortestPathBinaryMatrix(input);
-            Console.WriteLine($"input = {Utility.Print2DArray<int>(input)}=> {result}");
-        }
+        //     var result = new ShortestPathBinaryMatrixProblem().ShortestPathBinaryMatrix(input);
+        //     Console.WriteLine($"input = {Utility.Print2DArray<int>(input)}=> {result}");
+        // }
     }
 }
