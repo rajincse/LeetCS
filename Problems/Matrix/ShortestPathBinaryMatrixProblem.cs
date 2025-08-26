@@ -13,89 +13,78 @@ namespace Problems.Matrix
             public int Column { get; set; }
             public int Level { get; set; }
         }
+        private int[][] Grid { get; set; }
+        private bool[,] VisitedMap { get; set; }
+        private Queue<MatrixCell> Queue { get; set; }
         public int ShortestPathBinaryMatrix(int[][] grid)
         {
             if (grid is null || grid.Length == 0 || grid[0] is null || grid[0].Length == 0 || grid.Length != grid[0].Length)
             {
                 return -1;
             }
-            var visitedMap = new bool[grid.Length, grid[0].Length];
 
-            var startNode = new MatrixCell()
+            if (grid[0][0] != 0)
             {
-                Row = 0,
-                Column = 0,
-                Level = 0
-            };
+                return -1;
+            }
+            this.VisitedMap = new bool[grid.Length, grid[0].Length];
+            this.Grid = grid;
 
-            Queue<MatrixCell> queue = new Queue<MatrixCell>();
-            queue.Enqueue(startNode);
+            this.Visit(0, 0, 0);
 
-            visitedMap[startNode.Row, startNode.Column] = true;
             int endRow = grid.Length - 1;
             int endColumn = grid[0].Length - 1;
 
-            while (queue.Count != 0)
+            while (this.Queue.Count != 0)
             {
-                var node = queue.Dequeue();
+                var node = this.Queue.Dequeue();
                 if (node.Row == endRow && node.Column == endColumn)
                 {
-                    return node.Level+1;
+                    return node.Level + 1;
                 }
 
-                // Bottom node
-                var row = node.Row + 1;
-                var col = node.Column;
-                if (row <= endRow && col <= endColumn && grid[row][col] == 0 && !visitedMap[row, col])
-                {
-                    var bottomNode = new MatrixCell()
-                    {
-                        Row = row,
-                        Column = col,
-                        Level = node.Level + 1
-                    };
-                    queue.Enqueue(bottomNode);
-                    visitedMap[row, col] = true;
-                }
-
-                // Diagonal Node
-                row = node.Row + 1;
-                col = node.Column+1;
-                if (row <= endRow && col <= endColumn && grid[row][col] == 0 && !visitedMap[row, col])
-                {
-                    var bottomNode = new MatrixCell()
-                    {
-                        Row = row,
-                        Column = col,
-                        Level = node.Level + 1
-                    };
-                    queue.Enqueue(bottomNode);
-                    visitedMap[row, col] = true;
-                }
-
-                // Right Node
-                row = node.Row ;
-                col = node.Column+1;
-                if (row <= endRow && col <= endColumn && grid[row][col] == 0 && !visitedMap[row, col])
-                {
-                    var bottomNode = new MatrixCell()
-                    {
-                        Row = row,
-                        Column = col,
-                        Level = node.Level + 1
-                    };
-                    queue.Enqueue(bottomNode);
-                    visitedMap[row, col] = true;
-                }
+                // Left
+                this.Visit(node.Row, node.Column - 1, node.Level + 1);
+                // Bottom Left
+                this.Visit(node.Row + 1, node.Column - 1, node.Level + 1);
+                // Bottom
+                this.Visit(node.Row + 1, node.Column, node.Level + 1);
+                // Bottom Right
+                this.Visit(node.Row + 1, node.Column + 1, node.Level + 1);
+                // Right 
+                this.Visit(node.Row, node.Column + 1, node.Level + 1);
+                // Upper right
+                this.Visit(node.Row - 1, node.Column + 1, node.Level + 1);
+                //Up
+                this.Visit(node.Row - 1, node.Column, node.Level + 1);
+                // Upper left
+                this.Visit(node.Row - 1, node.Column-1, node.Level + 1);
             }
-            
+
             return -1;
+        }
+
+        private void Visit(int row, int col, int level)
+        {
+            var endRow = VisitedMap.Length-1;
+            var endColumn = VisitedMap.GetLongLength(0) - 1;
+            if (row <= endRow && col <= endColumn && row >= 0 && col >= 0 && this.Grid[row][col] == 0 && !this.VisitedMap[row, col])
+            {
+                var bottomNode = new MatrixCell()
+                {
+                    Row = row,
+                    Column = col,
+                    Level = level
+                };
+                this.Queue.Enqueue(bottomNode);
+                this.VisitedMap[row, col] = true;
+            }
         }
 
         public static void Main(string[] args)
         {
             var input = new int[][]{
-                [0,0,0],[1,1,0],[1,1,0]
+                [0,1],[1,0]
             };
 
             var result = new ShortestPathBinaryMatrixProblem().ShortestPathBinaryMatrix(input);
